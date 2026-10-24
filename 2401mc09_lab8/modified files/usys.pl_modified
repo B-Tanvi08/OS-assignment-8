@@ -1,0 +1,2 @@
+# For xv6-public variants using usys.S, add SYSCALL(va2pa), SYSCALL(getmeminfo), SYSCALL(vmprint).
+# If this tree uses usys.pl, follow the existing generator format instead.

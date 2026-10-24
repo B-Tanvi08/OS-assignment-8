@@ -1,0 +1,21 @@
+--- a/sysproc.c
++++ b/sysproc.c
+@@
++/* Reference addition for Q1: adapt headers and syscall integration to your tree. */
++int
++sys_va2pa(void)
++{
++  int arg;
++  uint va, pa;
++  pte_t *pte;
++  struct proc *p = myproc();
++  if(argint(0, &arg) < 0) return -1;
++  va = (uint)arg;
++  if(va >= KERNBASE || va >= p->sz) return -1;
++  pte = walkpgdir(p->pgdir, (char*)PGROUNDDOWN(va), 0);
++  if(pte == 0 || (*pte & PTE_P) == 0 || (*pte & PTE_U) == 0) return -1;
++  pa = PTE_ADDR(*pte) | (va & (PGSIZE - 1));
++  cprintf("va=%x pde=%d pte=%d offset=%d pa=%x\n",
++          va, PDX(va), PTX(va), va & (PGSIZE-1), pa);
++  return (int)pa;
++}

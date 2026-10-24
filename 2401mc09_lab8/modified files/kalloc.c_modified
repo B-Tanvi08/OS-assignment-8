@@ -1,0 +1,1 @@
+/* See Q2/Q5 integration notes. Free-page counter must be protected by kmem.lock. */

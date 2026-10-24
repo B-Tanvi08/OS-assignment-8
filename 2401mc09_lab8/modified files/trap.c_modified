@@ -1,0 +1,1 @@
+/* See Q4/Q5/Q6 integration notes. Page-fault handling must preserve existing trap behavior. */

@@ -1,0 +1,8 @@
+--- a/sysproc.c
++++ b/sysproc.c
+@@
++/* Q2 handler outline: define struct meminfo consistently and validate uaddr.
++ * Fill the structure in kernel memory, then copyout(p->pgdir, uaddr,
++ * (char *)&info, sizeof(info)). Do not return a kernel pointer to user space.
++ * Exact argptr/copyout signatures must match your xv6-public fork.
++ */

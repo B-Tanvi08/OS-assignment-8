@@ -1,0 +1,1 @@
+/* Integration checklist: add extern declarations and dispatch table entries for each new syscall. */

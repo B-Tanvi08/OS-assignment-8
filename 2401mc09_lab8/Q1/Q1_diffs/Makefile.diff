@@ -1,0 +1,5 @@
+--- a/Makefile
++++ b/Makefile
+@@
++# Add these to UPROGS in the existing format, once each:
++# _vatest _memtest _vmprinttest _lazytest _cowtest _protecttest _shmtest _pagerepl

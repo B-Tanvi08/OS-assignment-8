@@ -1,0 +1,10 @@
+--- a/vm.c
++++ b/vm.c
+@@
++/* vmprint() integration outline:
++ * Walk p->pgdir; for each present user PDE, print PDE index, PTE flags,
++ * physical page-table address, then each present PTE's VA, PA and flags.
++ * Print a summary of present kernel PDE entries after PDX(KERNBASE).
++ * Use P2V(PTE_ADDR(pde)) only for kernel-accessible page-table memory.
++ * Exact code should be merged with the actual vm.c in your source tree.
++ */

@@ -1,0 +1,16 @@
+--- /dev/null
++++ b/vatest.c
+@@
++#include "types.h"
++#include "stat.h"
++#include "user.h"
++int main(void) {
++  int x=12345;
++  printf(1,"parent VA=%x PA=%x\n",(uint)&x,va2pa((int)&x));
++  if(fork()==0) {
++    printf(1,"child VA=%x PA=%x\n",(uint)&x,va2pa((int)&x));
++    exit();
++  }
++  wait();
++  exit();
++}

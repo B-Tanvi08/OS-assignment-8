@@ -1,0 +1,8 @@
+--- /dev/null
++++ b/memtest.c
+@@
++#include "types.h"
++#include "stat.h"
++#include "user.h"
++#include "meminfo.h"
++/* See ../test/memtest.c for the complete user test source. */

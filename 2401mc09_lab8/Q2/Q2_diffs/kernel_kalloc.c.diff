@@ -1,0 +1,21 @@
+--- a/kalloc.c
++++ b/kalloc.c
+@@
++/* Add beside kmem's freelist; update ONLY while holding kmem.lock. */
++static uint free_page_count;
++
++/* In kfree(), increment after linking a page onto the freelist under lock:
++ * free_page_count++;
++ * In kalloc(), decrement only when a page was successfully removed:
++ * if(r) free_page_count--;
++ */
++
++uint
++getfreepages(void)
++{
++  uint n;
++  acquire(&kmem.lock);
++  n = free_page_count;
++  release(&kmem.lock);
++  return n;
++}

@@ -1,0 +1,9 @@
+--- a/sysproc.c
++++ b/sysproc.c
+@@
++int
++sys_vmprint(void)
++{
++  vmprint();
++  return 0;
++}

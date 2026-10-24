@@ -1,0 +1,1 @@
+/* Integration reference: sys_va2pa, sys_getmeminfo, and sys_vmprint belong in the kernel syscall source. See Q1–Q3 diff/reference files and README. This is not a full sysproc.c replacement. */

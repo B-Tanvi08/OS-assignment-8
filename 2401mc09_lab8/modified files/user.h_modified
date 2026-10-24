@@ -1,0 +1,1 @@
+/* Add declarations matching implementations: int va2pa(int); int getmeminfo(struct meminfo *); int vmprint(void); */

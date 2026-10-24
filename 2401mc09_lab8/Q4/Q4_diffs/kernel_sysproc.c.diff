@@ -1,0 +1,8 @@
+--- a/sysproc.c
++++ b/sysproc.c
+@@
++/* Q4: positive sbrk should reserve logical address space only.
++ * Increase p->sz after overflow/KERNBASE checks, without allocuvm().
++ * For n < 0, deallocate real mappings and update p->sz.
++ * Verify deallocuvm() skips absent pages in your fork.
++ */
